@@ -26556,6 +26556,7 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                 "local_interface": {"type": str},
                 "maxpoll": {"type": int},
                 "minpoll": {"type": int},
+                "source_address": {"type": str},
                 "preferred": {"type": bool},
                 "version": {"type": int},
                 "vrf": {"type": str},
@@ -26571,6 +26572,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
             """Value of maxpoll between 3 - 17 (Logarithmic)."""
             minpoll: int | None
             """Value of minpoll between 3 - 17 (Logarithmic)."""
+            source_address: str
+            """IP e.g., 2.2.2.55, 2001:db8::55"""
             preferred: bool | None
             version: int | None
             vrf: str | None
@@ -26588,6 +26591,7 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     local_interface: str | None | UndefinedType = Undefined,
                     maxpoll: int | None | UndefinedType = Undefined,
                     minpoll: int | None | UndefinedType = Undefined,
+                    source_address: str | UndefinedType = Undefined,
                     preferred: bool | None | UndefinedType = Undefined,
                     version: int | None | UndefinedType = Undefined,
                     vrf: str | None | UndefinedType = Undefined,
@@ -26606,6 +26610,7 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                         local_interface: Source interface.
                         maxpoll: Value of maxpoll between 3 - 17 (Logarithmic).
                         minpoll: Value of minpoll between 3 - 17 (Logarithmic).
+                        source_address: IP e.g., 2.2.2.55, 2001:db8::55.
                         preferred: preferred
                         version: version
                         vrf: VRF name.

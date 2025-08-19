@@ -8456,6 +8456,9 @@ keys:
               convert_types:
               - str
               description: Value of minpoll between 3 - 17 (Logarithmic).
+            source_address:
+              type: str
+              description: IP e.g., 2.2.2.55, 2001:db8::55.
             preferred:
               type: bool
             version:

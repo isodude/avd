@@ -11540,6 +11540,7 @@ class EosDesigns(EosDesignsRootModel):
                 "key": {"type": int},
                 "maxpoll": {"type": int},
                 "minpoll": {"type": int},
+                "source_address": {"type": str},
                 "version": {"type": int},
             }
             name: str | None
@@ -11551,6 +11552,8 @@ class EosDesigns(EosDesignsRootModel):
             """Value of maxpoll between 3 - 17 (Logarithmic)."""
             minpoll: int | None
             """Value of minpoll between 3 - 17 (Logarithmic)."""
+            source_address: str | None
+            """IP e.g., 2.2.2.55, 2001:db8::55"""
             version: int | None
 
             if TYPE_CHECKING:
@@ -11564,6 +11567,7 @@ class EosDesigns(EosDesignsRootModel):
                     key: int | None | UndefinedType = Undefined,
                     maxpoll: int | None | UndefinedType = Undefined,
                     minpoll: int | None | UndefinedType = Undefined,
+                    source_address: str | None | UndefinedType = Undefined,
                     version: int | None | UndefinedType = Undefined,
                 ) -> None:
                     """
@@ -11579,6 +11583,7 @@ class EosDesigns(EosDesignsRootModel):
                         key: key
                         maxpoll: Value of maxpoll between 3 - 17 (Logarithmic).
                         minpoll: Value of minpoll between 3 - 17 (Logarithmic).
+                        source_address: IP e.g., 2.2.2.55, 2001:db8::55.
                         version: version
 
                     """

@@ -46,6 +46,9 @@ keys:
             minpoll:
               type: int
               $ref: eos_cli_config_gen#/keys/ntp/keys/servers/items/keys/minpoll
+            source_address:
+              type: str
+              $ref: eos_cli_config_gen#/keys/ntp/keys/servers/items/keys/source_address
             version:
               type: int
               $ref: eos_cli_config_gen#/keys/ntp/keys/servers/items/keys/version

@@ -54,7 +54,9 @@ ntp authenticate
 {%         if server.maxpoll is arista.avd.defined %}
 {%             set ntp_server_cli = ntp_server_cli ~ " maxpoll " ~ server.maxpoll %}
 {%         endif %}
-{%         if server.local_interface is arista.avd.defined %}
+{%         if server.source_address is arista.avd.defined %}
+{%             set ntp_server_cli = ntp_server_cli ~ " source-address " ~ server.source_address %}
+{%         elif server.local_interface is arista.avd.defined %}
 {%             set ntp_server_cli = ntp_server_cli ~ " local-interface " ~ server.local_interface %}
 {%         endif %}
 {%         if server.key is arista.avd.defined %}
