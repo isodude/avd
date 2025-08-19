@@ -11538,9 +11538,9 @@ class EosDesigns(EosDesignsRootModel):
                 "burst": {"type": bool},
                 "iburst": {"type": bool},
                 "key": {"type": int},
+                "source_address_family": {"type": str, "default": "ipv4"},
                 "maxpoll": {"type": int},
                 "minpoll": {"type": int},
-                "source_address": {"type": str},
                 "version": {"type": int},
             }
             name: str | None
@@ -11548,12 +11548,16 @@ class EosDesigns(EosDesignsRootModel):
             burst: bool | None
             iburst: bool | None
             key: int | None
+            source_address_family: Literal["ipv4", "ipv6"]
+            """
+            Source IP address family used to set which address should be used from the NTP interface.
+
+            Default value: `"ipv4"`
+            """
             maxpoll: int | None
             """Value of maxpoll between 3 - 17 (Logarithmic)."""
             minpoll: int | None
             """Value of minpoll between 3 - 17 (Logarithmic)."""
-            source_address: str | None
-            """IP e.g., 2.2.2.55, 2001:db8::55"""
             version: int | None
 
             if TYPE_CHECKING:
@@ -11565,9 +11569,9 @@ class EosDesigns(EosDesignsRootModel):
                     burst: bool | None | UndefinedType = Undefined,
                     iburst: bool | None | UndefinedType = Undefined,
                     key: int | None | UndefinedType = Undefined,
+                    source_address_family: Literal["ipv4", "ipv6"] | UndefinedType = Undefined,
                     maxpoll: int | None | UndefinedType = Undefined,
                     minpoll: int | None | UndefinedType = Undefined,
-                    source_address: str | None | UndefinedType = Undefined,
                     version: int | None | UndefinedType = Undefined,
                 ) -> None:
                     """
@@ -11581,9 +11585,9 @@ class EosDesigns(EosDesignsRootModel):
                         burst: burst
                         iburst: iburst
                         key: key
+                        source_address_family: Source IP address family.
                         maxpoll: Value of maxpoll between 3 - 17 (Logarithmic).
                         minpoll: Value of minpoll between 3 - 17 (Logarithmic).
-                        source_address: IP e.g., 2.2.2.55, 2001:db8::55.
                         version: version
 
                     """
