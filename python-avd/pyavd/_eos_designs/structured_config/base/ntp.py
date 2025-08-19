@@ -92,4 +92,10 @@ class NtpMixin(Protocol):
             if first:
                 ntp_server.preferred = True
                 first = False
+            if server.source_address_family == "ipv4" and self.shared_utils.node_config.mgmt_ip is not None:
+                ntp_server.source_address = self.shared_utils.node_config.mgmt_ip
+                ntp_server.local_interface = None
+            if server.source_address_family == "ipv6" and self.shared_utils.node_config.ipv6_mgmt_ip is not None:
+                ntp_server.source_address = self.shared_utils.node_config.ipv6_mgmt_ip
+                ntp_server.local_interface = None
             self.structured_config.ntp.servers.append(ntp_server)

@@ -37,6 +37,15 @@ keys:
               type: bool
             iburst:
               type: bool
+            source_address_family:
+              description: |-
+                Source IP address family used to set which address should be used from the NTP interface.
+              type: str
+              valid_values:
+                - ipv4
+                - ipv6
+              default: ipv4
+                type: str
             key:
               type: int
               $ref: eos_cli_config_gen#/keys/ntp/keys/servers/items/keys/key
@@ -46,9 +55,6 @@ keys:
             minpoll:
               type: int
               $ref: eos_cli_config_gen#/keys/ntp/keys/servers/items/keys/minpoll
-            source_address:
-              type: str
-              $ref: eos_cli_config_gen#/keys/ntp/keys/servers/items/keys/source_address
             version:
               type: int
               $ref: eos_cli_config_gen#/keys/ntp/keys/servers/items/keys/version
